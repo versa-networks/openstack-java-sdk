@@ -7,15 +7,16 @@ import com.woorea.openstack.keystone.model.Tenant;
 
 public class ExamplesConfiguration {
 
-	public static final String KEYSTONE_AUTH_URL = "http://identity/v2.0";
+	public static final String KEYSTONE_AUTH_URL = "http://10.192.0.202:5000/v2.0";
 	
-	public static final String KEYSTONE_USERNAME = "";
+	public static final String KEYSTONE_USERNAME = "admin";
 	
-	public static final String KEYSTONE_PASSWORD = "";
+	public static final String KEYSTONE_PASSWORD = "versa123";
 	
-	public static final String KEYSTONE_ENDPOINT = "http://keystone/v2.0";
+	// I am using admin_port = 35357 specified in keystone.conf - port number on which public admin listens
+	public static final String KEYSTONE_ENDPOINT = "http://10.192.0.202:35357/v2.0";
 	
-	public static final String TENANT_NAME = "admin";
+	public static final String TENANT_NAME = "BOI_M";
 
 	public static final String NOVA_ENDPOINT = "http://compute/v2";
 	

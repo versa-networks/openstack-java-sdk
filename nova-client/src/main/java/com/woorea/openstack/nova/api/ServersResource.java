@@ -71,6 +71,14 @@ public class ServersResource {
 	public Delete delete(String id) {
 		return new Delete(id);
 	}
+	
+	public RebootAction reboot(String serverId, String rebootType) {  
+
+		Reboot reboot = new Reboot();
+		reboot.setType(rebootType);
+		return new RebootAction(serverId, reboot);
+
+	}
 
 	public class List extends OpenStackRequest<Servers> {
 

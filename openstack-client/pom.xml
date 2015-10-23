@@ -7,5 +7,27 @@
 	</parent>
 	<artifactId>openstack-client</artifactId>
 	<name>OpenStack Client</name>
-	<description>OpenStack Client</description>
+    <description>OpenStack Client</description>
+
+	<!--  whole of this dependency was added by Murali  as JerSeyConnector was not getting resolved
+	remove if any alternate solution is present -->
+    <dependencies> 
+        <!-- comment this dependency compiling SDK  -->
+    	<dependency>
+			<groupId>com.woorea</groupId>
+			<artifactId>jersey-connector</artifactId>
+			<version>3.2.2-SNAPSHOT</version>
+        </dependency>
+<!-- <dependency> -->
+<!--   	<groupId>com.sun.jersey</groupId> -->
+<!--   	<artifactId>jersey-client</artifactId> -->
+<!--   	<version>1.17.1</version> -->
+<!--   </dependency> -->
+<!--   <dependency> -->
+<!--   	<groupId>org.codehaus.jackson</groupId> -->
+<!--   	<artifactId>jackson-jaxrs</artifactId> -->
+<!--   	<version>1.9.12</version> -->
+<!--   </dependency> -->
+    </dependencies>	 
+
 </project>

@@ -3,6 +3,8 @@ package com.woorea.openstack.base.client;
 import java.util.Properties;
 import java.util.ServiceLoader;
 
+import com.woorea.openstack.connector.JerseyConnector;
+
 public class OpenStackClient {
 	
 	protected String endpoint;
@@ -25,6 +27,13 @@ public class OpenStackClient {
 			DEFAULT_CONNECTOR = clientConnector;
 			break;
 		}
+
+        /** GDM ** for ESB issues */
+		try {
+			DEFAULT_CONNECTOR = new JerseyConnector();
+		} catch ( Throwable e) {
+			e.printStackTrace();
+		}  
 	}
 
 	public OpenStackClient(String endpoint) {

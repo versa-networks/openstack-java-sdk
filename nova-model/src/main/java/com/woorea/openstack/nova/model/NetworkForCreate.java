@@ -9,6 +9,9 @@ public class NetworkForCreate {
 	private String id;
 	@JsonProperty("fixed_ip")
 	private String fixedIp;
+	//GDM: Was not supported added now 
+	@JsonProperty("port")
+	private String port;	
 
 	public String getId() {
 		return id;
@@ -25,5 +28,16 @@ public class NetworkForCreate {
 	public void setFixedIp(String fixedIp) {
 		this.fixedIp = fixedIp;
 	}
+
+	public String getPort() {
+		return port;
+	}
+
+	public void setPort(String port) {
+		this.port = port;
+	}
+	
+	
+	
 
 }

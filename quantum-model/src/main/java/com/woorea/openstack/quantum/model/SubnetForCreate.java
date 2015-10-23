@@ -1,10 +1,13 @@
 package com.woorea.openstack.quantum.model;
 
 import java.io.Serializable;
+
 import java.util.List;
 
 import org.codehaus.jackson.annotate.JsonProperty;
 import org.codehaus.jackson.map.annotate.JsonRootName;
+import org.codehaus.jackson.map.annotate.JsonSerialize;
+import org.codehaus.jackson.map.annotate.JsonSerialize.Inclusion;
 
 @JsonRootName("subnet")
 
@@ -20,6 +23,13 @@ public class SubnetForCreate implements Serializable{
 	private List<Pool> list;
     @JsonProperty("tenant_id")
     private String tenantId;
+	//GDM added
+	@JsonProperty("enable_dhcp")
+	private boolean enableDHCP;
+	@JsonProperty("gateway_ip")
+	@JsonSerialize(include=Inclusion.NON_DEFAULT)
+	private String gatewayIp = "";
+		
 	
 	/**
 	 * @param name the name to set
@@ -104,4 +114,26 @@ public class SubnetForCreate implements Serializable{
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
+
+    /**
+     * GDM
+     */
+	public boolean isEnableDHCP() {
+		return enableDHCP;
+	}
+
+	public void setEnableDHCP(boolean enableDHCP) {
+		this.enableDHCP = enableDHCP;
+	}
+
+	public String getGatewayIp() {
+		return gatewayIp;
+	}
+
+	public void setGatewayIp(String gatewayIp) {
+		this.gatewayIp = gatewayIp;
+	}
+
+	
+	
 }

@@ -27,7 +27,9 @@ public class Subnet implements Serializable{
 	@JsonProperty("host_routes")
 	private List<String> hostRoutes;
 	@JsonProperty("ip_version")
-	private IpVersion ipversion;
+	//private IpVersion ipversion; GD Change as JSON derialization was failing
+	private int ipversion;
+	//private IpVersion ipversion;
 	@JsonProperty("gateway_ip")
 	private String gw;
 	private String cidr;
@@ -177,16 +179,28 @@ public class Subnet implements Serializable{
 
 	/**
 	 * @return the ipversion
-	 */
+	 *
 	public IpVersion getIpversion() {
 		return ipversion;
 	}
 
 
-	/**
+	**
 	 * @param ipversion the ipversion to set
-	 */
+	 *
 	public void setIpversion(IpVersion ipversion) {
+		this.ipversion = ipversion;
+	} */
+
+    /**
+     * GDM
+     */
+	public int getIpversion() {
+		return ipversion;
+	}
+
+
+	public void setIpversion(int ipversion) {
 		this.ipversion = ipversion;
 	}
 
