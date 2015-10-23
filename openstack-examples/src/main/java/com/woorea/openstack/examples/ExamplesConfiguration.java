@@ -11,7 +11,7 @@ public class ExamplesConfiguration {
 	
 	public static final String KEYSTONE_USERNAME = "admin";
 	
-	public static final String KEYSTONE_PASSWORD = "versa123";
+	public static final String KEYSTONE_PASSWORD = "admin";
 	
 	// I am using admin_port = 35357 specified in keystone.conf - port number on which public admin listens
 	public static final String KEYSTONE_ENDPOINT = "http://10.192.0.202:35357/v2.0";
